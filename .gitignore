@@ -17,3 +17,5 @@ toplevel.v
 
 *.hack
 *.lst
+*_ram_end.txt
+*.pgm
