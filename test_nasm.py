@@ -19,6 +19,13 @@ def source(name):
 	src_dir = os.path.join(dir, '.' )
 	return os.path.join(src_dir, name)
 
+
+@pytest.mark.telemetry_files(source("exe1.nasm"))
+def test_exe1():
+    ram = {0: 0, 1: 0}
+    tst = {10: 5}
+    assert nasm_test("exe1.nasm", ram, tst)
+
 @pytest.mark.telemetry_files(source('add.nasm'))
 def test_add():
     ram = {0: 2, 1: 42}
